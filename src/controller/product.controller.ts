@@ -1,11 +1,11 @@
 import { Controller, Get } from "routing-controllers";
 import { ProductService } from "../services/productService";
 
-@Controller()
+@Controller('/product')
 export class ProductController {
     private readonly productService = new ProductService();
 
-    @Get('/product/getAllProduct')
+    @Get('/getAllProduct')
     async getProducts() {
         const allProducts = await this.productService.GetAllProducts();
         return allProducts;
